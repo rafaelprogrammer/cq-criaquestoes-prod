@@ -1,0 +1,11 @@
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+#      database: cq
+#      password: admin
+#      username: admin
+#      host: localhost
+#      port: 27017
+server:
+  port: 8080
