@@ -1,8 +1,0 @@
-spring:
-  data:
-    mongodb:
-      database: cq
-      password: admin
-      username: admin
-      host: localhost
-      port: 27017

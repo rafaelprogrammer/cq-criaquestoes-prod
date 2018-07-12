@@ -6,3 +6,10 @@ security:
     secret:
       key: Asjfwol2asf123142Ags1k23hnSA36as6f4qQ324FEsvb
 
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+     
+
+
