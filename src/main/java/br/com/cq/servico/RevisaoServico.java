@@ -24,6 +24,9 @@ public class RevisaoServico implements IRevisaoServico {
 	private RevisaoRepositorio revisaoRepositorio;
 	
 	@Autowired
+	private RespostaServico respostaServico;
+	
+	@Autowired
 	private QuestaoRepositorio questaoRepositorio;
 	
 	private ModelMapper modelMapper = new ModelMapper();
@@ -49,6 +52,9 @@ public class RevisaoServico implements IRevisaoServico {
 	@Override
 	public void atualizar(RevisaoDTO revisaoDTO) {
 		Revisao revisao = modelMapper.map(revisaoDTO, Revisao.class);
+		if (revisao.getRespostas() != null && !revisao.getRespostas().isEmpty()) {
+			revisao.setRespostas(respostaServico.salvarAtualizarRespostas(revisao.getRespostas()));
+		}
 		if(revisao.getQuestoes().size() == revisao.getRespostas().size()) {
 			revisao.setConcluido(true);
 		}

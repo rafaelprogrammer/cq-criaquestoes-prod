@@ -1,6 +1,7 @@
 package br.com.cq.dominio;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
@@ -12,6 +13,7 @@ public class Assunto {
 	@Id
 	private String id;
 	private String descricao;
+	@DBRef
 	private Disciplina disciplina;
 	
 	public Assunto() {
