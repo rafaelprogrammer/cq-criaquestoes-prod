@@ -23,5 +23,7 @@ public class Questao {
 	private DateTime dataAlteracao;
 	@DBRef
 	private Assunto assunto;
+	@DBRef
+	private Disciplina disciplina;
 	
 }

@@ -14,5 +14,6 @@ public class QuestaoDTO {
 	private List<OpcaoDTO> opcoes;
 	private String observacao;
 	private AssuntoDTO assunto;
+	private DisciplinaDTO disciplina;
 	
 }
