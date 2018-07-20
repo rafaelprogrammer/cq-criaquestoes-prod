@@ -1,6 +1,7 @@
 package br.com.cq.servico;
 
 import java.lang.reflect.Type;
+import java.util.Collections;
 import java.util.List;
 
 import org.joda.time.DateTime;
@@ -41,6 +42,7 @@ public class RevisaoServico implements IRevisaoServico {
 		if (!StringUtils.isEmpty(filtro.getIdAssunto())) {
 			questoes = questaoRepositorio.findByAssuntoId(filtro.getIdAssunto());
 		}
+		Collections.shuffle(questoes);
 		revisaoRepositorio.save(revisao
 				.titulo(filtro.getTitulo())
 				.questoes(questoes)
