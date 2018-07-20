@@ -19,4 +19,10 @@ public class RespostaServico implements IRespostaServico {
 		return repostaRepositorio.saveAll(respostas);
 	}
 
+	@Override
+	public boolean removerRespostas(List<Resposta> respostas) {
+		repostaRepositorio.deleteAll(respostas);
+		return true;
+	}
+
 }

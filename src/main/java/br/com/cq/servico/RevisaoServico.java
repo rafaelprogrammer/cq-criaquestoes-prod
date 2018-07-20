@@ -73,7 +73,14 @@ public class RevisaoServico implements IRevisaoServico {
 
 	@Override
 	public void remover(String id) {
-		revisaoRepositorio.deleteById(id);
+		boolean respostasRemovidas = false;
+		Revisao revisao = revisaoRepositorio.findById(id).get();
+		if(revisao.getRespostas() != null && !revisao.getRespostas().isEmpty()) {
+			respostasRemovidas = respostaServico.removerRespostas(revisao.getRespostas());
+		}
+		if (respostasRemovidas) {
+			revisaoRepositorio.deleteById(id);
+		}
 	}
 
 	@Override
